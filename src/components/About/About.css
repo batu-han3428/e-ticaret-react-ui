@@ -1,0 +1,83 @@
+﻿@charset "UTF-8";
+
+#hakkimizdaFotograf1Alan {
+    width: 100%;
+    height: 200px;
+}
+
+#hakkimizdaFotograf1 {
+    height: 200px;
+    width: 100%;
+}
+
+#hakkimizdaFotograf2Alan {
+    width: 100%;
+}
+
+#hakkimizdaFotograf2 {
+    width: 100%;
+}
+
+#hakkmizdaYaziBaslik {
+    color: rgb(88 99 99);
+}
+
+#siteHaritasiLink {
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+    font-weight: 500;
+    text-decoration-color: transparent;
+    transition: 1s !important;
+    text-underline-position: under;
+}
+
+#siteHaritasiLink:hover {
+    text-decoration: underline wavy;
+    color: #FFC107;
+}
+
+.breadcrumb > li {
+    font-size: 14px;
+}
+
+.breadcrumb {
+    margin: 0;
+    align-self: center;
+}
+
+#siteHaritasiSutun {
+    display: flex;
+    height: 50px;
+}
+
+@media (max-width: 400px) {
+
+    #siteHaritasiSutun {
+        display: flex;
+        height: 50px;
+        padding: 50px 0 !important;
+    }
+
+    .breadcrumb > li:nth-child(1) {
+        text-indent: 10px !important;
+    }
+}
+
+#body {
+    background-image: url(./AboutImg/futbolbg.webp);
+    background-size: 30%;
+    background-attachment: fixed;
+    padding-bottom: 25px;
+}
+
+.icerikAbout{
+    background-color:rgba(255, 255, 255,0.50);
+    border-radius:10%;
+}
+
+.aboutYazi {
+    color: rgb(119, 119, 119);
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Papyrus;
+}

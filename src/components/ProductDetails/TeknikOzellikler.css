@@ -1,0 +1,188 @@
+﻿@charset "UTF-8";
+
+#teknikOzelliklerTabMenuSutun {
+    padding-top: 30px;
+}
+
+#teknikOzelliklerTabMenu {
+    border-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.teknikOzelliklerTabMenuItem {
+    width: 33.3333333%;
+    height: 75px;
+    text-align: center;
+    display: table;
+    cursor: pointer;
+}
+
+.teknikOzelliklerTabMenuLink {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(163, 155, 139);
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+}
+
+    .teknikOzelliklerTabMenuLink:hover {
+        color: #fff;
+    }
+
+#teknikOzelliklerIcerikKismi > div {
+    display: none;
+}
+
+#teknikOzelliklerIcerikKismi {
+    background-color: #fff;
+    padding: 30px;
+}
+
+
+#urunAciklamasiIcerikYaziAlan {
+    padding-top: 20px;
+}
+
+#urunAciklamasiIcerikYaziParagraf {
+    padding-top: 20px;
+    line-height: 16px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#urunAciklamasiIcerikYaziSpan {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.teknikOzelliklerIcerikTabloBaslik {
+    text-indent: -10px;
+    font-weight: 500;
+}
+
+.teknikOzelliklerIcerikTabloYaziSutun {
+    display: flex;
+}
+
+.teknikOzelliklerIcerikYaziOzellikAdAlan {
+    width: 20%;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.teknikOzelliklerIcerikYaziOzellikAlan {
+    margin-left: 10px;
+}
+
+
+
+.taksitSecenekleriIcerikFotoAlan {
+    width: 75px;
+    padding-bottom: 10px;
+}
+
+.taksitSecenekleriIcerikFoto {
+    object-fit: scale-down;
+    width: 100%;
+}
+
+.taksitSecenekleriIcerikBasligi span, .taksitSecenekleriIcerikYazisi > span {
+    display: inline-block;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    #taksitSecenekleriIcerikSatir > div {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .taksitSecenekleriIcerikBasligi span {
+        line-height: 15px;
+        font-size: 15px;
+    }
+}
+
+.taksitSecenekleriBaslikveYazilari {
+    width: 100%;
+    border: 1px solid rgb(212, 204, 188);
+}
+
+.taksitSecenekleriIcerikBasligi {
+    background-color: rgb(163, 155, 139);
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+}
+
+    .taksitSecenekleriIcerikBasligi > div, .taksitSecenekleriIcerikYazisi > div {
+        width: 116px;
+    }
+
+.taksitSecenekleriIcerikYazisi {
+    background-color: #fff;
+    padding: 10px 0;
+    font-weight: 600;
+    display: flex;
+    text-align: center;
+}
+
+    .taksitSecenekleriIcerikYazisi > div:nth-child(3) span {
+        color: rgb(249, 164, 32);
+    }
+
+@media (min-width:400px) and (max-width: 575px) {
+
+    .teknikOzelliklerIcerikYaziOzellikAdAlan {
+        width: 30%;
+    }
+}
+
+@media (max-width:400px) {
+
+    #teknikOzelliklerTabMenu {
+        flex-wrap: nowrap;
+    }
+
+    .teknikOzelliklerTabMenuLink {
+        padding: 0.5rem 1rem !important;
+        font-size: 10px !important;
+        font-weight: 500 !important;
+    }
+
+    .teknikOzelliklerIcerikTabloYaziSutun {
+        justify-content: space-between !important;
+    }
+
+    .teknikOzelliklerIcerikYaziOzellikAdAlan {
+        width: 60% !important;
+    }
+
+    .teknikOzelliklerIcerikYaziOzellikAlan {
+        width: 40% !important;
+    }
+}
+
+@media (max-width: 488px) {
+
+    .teknikOzelliklerTabMenuLink {
+        padding: 0.5rem 0.10rem !important;
+    }
+
+    .teknikOzelliklerIcerikYaziOzellikAdAlan {
+        width: 40% !important;
+    }
+}

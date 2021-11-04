@@ -1,0 +1,57 @@
+﻿@charset "UTF-8";
+
+#alisverisKrediContainer {
+    position: relative;
+    height: auto;
+}
+
+#alisverisKrediBaslik {
+    color: #333333;
+    font-weight: 600;
+}
+
+#alisverisKredisiAlanSutun {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.alisverisAlan {
+    display: flex;
+    justify-content: center;
+    width: 210px;
+    height: 100px;
+    position: relative;
+}
+
+.alisverisFoto {
+    width: 100px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.alisverisYazi {
+    font-weight: bold;
+    color: #333333;
+    width: auto;
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    font-size: 10px;
+}
+
+    .alisverisYazi > span {
+        cursor: pointer;
+    }
+
+.alisverisBorder {
+    padding: 0px;
+    border-right: 1px solid rgb(214, 214, 214);
+    margin: 0 20px;
+    height: 45px;
+}
+
+    .alisverisBorder:nth-child(6) {
+        border-right: unset !important;
+    }

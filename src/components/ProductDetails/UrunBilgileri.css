@@ -1,0 +1,795 @@
+﻿@charset "UTF-8";
+
+#urunBilgileriSutun {
+    padding: 0 39px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    #urunBilgileriSutun {
+        width: 100%;
+    }
+}
+
+
+/* Birlikte Al */
+
+.birlikteAlFotoAlan {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.birlikteAlFoto {
+    object-fit: scale-down;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+}
+
+.birlikteAlBaslikTopveFiyatlarAlan {
+    height: 150px;
+    display: grid;
+}
+
+.birlikteAlBaslikAlan {
+    margin-bottom: auto;
+}
+
+.birlikteAlBaslik {
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 14px;
+}
+
+.birlikteAlTopveFiyatlar {
+    display: flex;
+}
+
+.birlikteAlTop {
+    background-color: rgb(255, 123, 0);
+    text-align: center;
+    width: 40px;
+    display: table;
+    color: white;
+    height: 40px;
+    padding: 5px;
+}
+
+.birlikteAlTopYazi {
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: 500;
+    line-height: 18px;
+    font-size: 13px !important;
+}
+
+.birlikteAlFiyatlar {
+    margin-left: 10px;
+}
+
+    .birlikteAlFiyatlar span {
+        display: block;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 20px;
+        font-weight: bold;
+        font-size: 100%;
+    }
+
+.birlikteAlIndirim {
+    text-decoration: line-through;
+    color: rgb(92, 101, 106);
+}
+
+.birlikteAlIndirimliFiyat {
+    color: rgb(255, 123, 0);
+}
+
+.birlikteAlAsilFiyat {
+    color: rgb(255, 123, 0);
+    font-size: 20px !important;
+}
+
+#birlikteAlIconAlan {
+    background-color: rgb(196, 196, 196);
+    text-align: center;
+    margin: 0 auto;
+    width: 25px;
+    border-radius: 50%;
+    margin-top: 35px;
+}
+
+#birlikteAlIcon {
+    color: #fff;
+    margin:2px 2px;
+}
+
+
+#birlikteAlUcretBilgileri {
+    margin-left: 10px;
+}
+
+    #birlikteAlUcretBilgileri span {
+        display: block;
+        font-size: 12px;
+    }
+
+#birlikteAlToplamUrun {
+    color: rgb(0, 0, 0);
+}
+
+#birlikteAlToplamUrunSayi {
+    color: rgb(92, 101, 106);
+}
+
+#birlikteAlToplamKazanc {
+    color: rgb(147, 191, 65);
+}
+
+#birlikteAlToplamKazancIndirim {
+    text-decoration: line-through;
+    color: rgb(92, 101, 106);
+    font-size: 15px !important;
+    font-weight: 600;
+}
+
+#birlikteAlToplamKazancIndirimliFiyat {
+    color: rgb(255, 123, 0);
+    font-size: 17px !important;
+    font-weight: 600;
+}
+
+#birlikteAlUcretBilgileriSutun {
+    text-align: end;
+}
+
+#birlikteAlUcretBilgileriButonSutun {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#birlikteAlButon {
+    color: white;
+    background-color: rgb(147, 191, 65);
+    border: 0;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 45px;
+    padding-right: 50px;
+}
+
+@media (min-width:489px) and (max-width: 575px) {
+
+    #birlikteAlButon {
+        padding-left: 30px;
+        padding-right: 25px;
+    }
+
+    #birlikteAlIcon2 {
+        font-size: 20px !important;
+    }
+
+    .birlikteAlBaslik {
+        font-size: 12px;
+        font-weight: 700;
+        display: inline-block;
+        line-height: 13px;
+    }
+
+    .birlikteAlTop {
+        width: 50px !important;
+        height: 30px !important;
+        padding: 0 !important;
+    }
+
+    .birlikteAlTopYazi {
+        font-weight: 500 !important;
+        line-height: 13px !important;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 488px) {
+
+    #birlikteAlSatir > div {
+        width: 100%;
+    }
+
+        #birlikteAlSatir > div:nth-child(1) {
+            border-bottom: 1px solid rgb(153, 165, 172);
+        }
+
+        #birlikteAlSatir > div:nth-child(2) {
+            display: none;
+        }
+
+    #birlikteAlUcretSatir > div {
+        width: 100%;
+    }
+
+        #birlikteAlUcretSatir > div:nth-child(1) {
+            border-bottom: 1px solid rgb(153, 165, 172);
+        }
+
+    #birlikteAlUcretBilgileriButonSutun {
+        justify-content: center;
+    }
+}
+
+
+
+#birlikteAlButon:hover {
+    background-color: rgb(133, 173, 59)
+}
+
+#birlikteAlIcon2 {
+    font-size: 30px;
+}
+
+#birlikteAlYazi {
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+@media (max-width: 400px) {
+
+    #birlikteAlSatir > div {
+        width: 100%;
+    }
+
+        #birlikteAlSatir > div:nth-child(1) {
+            border-bottom: 1px solid rgb(153, 165, 172);
+        }
+
+        #birlikteAlSatir > div:nth-child(2) {
+            display: none;
+        }
+
+    #birlikteAlUcretSatir > div {
+        width: 100%;
+    }
+
+        #birlikteAlUcretSatir > div:nth-child(1) {
+            border-bottom: 1px solid rgb(153, 165, 172);
+        }
+}
+
+
+/* MarkaStok */
+#markaStokSutun {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+@media (max-width: 400px) {
+
+    #markaStokSutun {
+        padding: 5px !important;
+    }
+}
+
+#Marka {
+    object-fit: scale-down;
+    width: inherit;
+}
+
+#MarkaAlan {
+    width: 100px;
+}
+
+#stokAlan {
+    display: flex;
+    align-items: center;
+}
+
+#stokIconAlan {
+    background-color: rgb(141, 180, 56);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    display: table;
+}
+
+#stokIcon {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    color: white;
+    font-size: 110%;
+}
+
+#stokYaziAlan {
+    margin-left: 5px;
+}
+
+#stokYazi {
+    color: rgb(141, 180, 56);
+    font-weight: bold;
+}
+
+/* TabMenu */
+#tabMenuSutun {
+    padding-top: 30px;
+}
+
+@media (max-width: 400px) {
+
+    .tabMenuLinkYaziAlan {
+        height: 50px !important;
+    }
+
+    .tabMenuItem {
+        width: 33% !important;
+    }
+
+    .tabMenuLinkIcon {
+        font-size: 20px !important;
+    }
+
+    .tabMenuLinkYazi {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 600;
+    }
+
+    #TabMenu .tabMenuLink {
+        padding: 0 !important;
+    }
+}
+
+#TabMenu {
+    border-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+    #TabMenu .tabMenuLink {
+        margin-bottom: -1px;
+        background: none;
+        border: 1px solid transparent;
+        border: 0;
+        border-radius: 0;
+        display: block;
+        padding: 0.5rem 1rem;
+        color: #0d6efd;
+        text-decoration: none;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+        text-align: center;
+    }
+
+        #TabMenu .tabMenuLink:hover {
+            border-color: #e9ecef #e9ecef #dee2e6;
+        }
+
+    #TabMenu .tabMenuItem .tabMenuLink {
+        color: rgb(177, 171, 159);
+        background-color: #fff;
+        border-color: #dee2e6 #dee2e6 #fff;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+#tabMenuIcerikler > .tabMenuIcerik {
+    display: none;
+}
+
+.tabMenuItem {
+    cursor: pointer;
+    width: 100px;
+    height: auto;
+    background-color: #fff !important;
+}
+
+    .tabMenuItem:hover, .tabMenuLink:hover {
+        background-color: rgb(243, 243, 243) !important;
+    }
+
+        .tabMenuItem:hover .tabMenuLinkYazi, .tabMenuItem:hover .tabMenuLinkIcon {
+            color: rgb(255, 123, 0) !important;
+        }
+
+
+.tabMenuLinkIcon {
+    font-size: 25px;
+}
+
+.tabMenuLinkYaziAlan {
+    height: 35px;
+}
+
+.tabMenuLinkYazi {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 600;
+}
+
+#tabMenuIcerikler {
+    background-color: rgb(243, 243, 243) !important;
+    padding: 15px;
+}
+
+
+
+.tabMenuIcon {
+    color: rgb(255, 123, 0);
+    font-size: 70%;
+}
+
+.tabMenuYazi {
+    color: rgb(41, 40, 40);
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+    line-height: 13px;
+}
+
+@media (max-width:489px) {
+
+    .tabMenuLinkYaziAlan {
+        height: 50px !important;
+    }
+
+    .tabMenuItem {
+        width: 33.33333% !important;
+    }
+
+    .tabMenuLinkIcon {
+        font-size: 20px !important;
+    }
+
+    .tabMenuLinkYazi {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 600;
+    }
+
+    #TabMenu .tabMenuLink {
+        padding: 0 !important;
+    }
+}
+
+@media (min-width:490px) and (max-width: 575px) {
+
+    .tabMenuItem {
+        width: 33.33333%;
+    }
+}
+
+
+/* UrunBaslik */
+#urunBaslik {
+    font-weight: bold;
+    display: inline-block;
+}
+
+#urunBaslikSutun {
+    padding-top: 20px;
+}
+
+
+/* UrunFiyat SepeteEkle */
+
+#urunFiyatSepeteEkleSutun {
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+
+/* SepeteEkle */
+#sepeteEkleButon {
+    color: white;
+    background-color: rgb(255, 123, 0);
+    border: 0;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 45px;
+    padding-right: 50px;
+}
+
+    #sepeteEkleButon:hover {
+        background-color: rgb(204, 98, 0);
+    }
+
+#sepeteEkleIcon2 {
+    font-size: 30px;
+}
+
+#sepeteEkleYazi {
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+@media (max-width: 489px) {
+
+    #sepeteEkleButon {
+        color: white;
+        background-color: rgb(255, 123, 0);
+        border: 0;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding-left: 25px;
+        padding-right: 30px;
+    }
+
+    #sepeteEkleIcon2 {
+        font-size: 30px;
+    }
+
+    #sepeteEkleYazi {
+        font-weight: 600;
+        margin-left: 5px;
+    }
+
+    #sepeteEkleModalButon {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* Modal */
+
+
+
+#sepeteEkleTopveFiyatlar {
+    display: flex;
+}
+
+#sepeteEkleTop {
+    background-color: rgb(255, 123, 0);
+    text-align: center;
+    width: 60px;
+    display: table;
+    color: white;
+    height: 60px;
+}
+
+#sepeteEkleFiyatlar {
+    margin-left: 10px;
+}
+
+#sepeteEkleTopYazi {
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+#sepeteEkleFiyatlar span {
+    display: block;
+    padding: 0;
+    line-height: 16px;
+    font-weight: 600;
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+#sepeteEkleIndirim {
+    text-decoration: line-through;
+    color: rgb(92, 101, 106);
+}
+
+#sepeteEkleIndirimliFiyat {
+    color: rgb(255, 123, 0);
+    font-weight: 700 !important;
+    font-size: 25px !important;
+}
+
+
+
+#sepeteEkleFoto {
+    object-fit: scale-down;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+}
+
+#sepeteEkleFotoAlan {
+    height: 100px;
+    width: 100px;
+    align-self: center;
+}
+
+#sepeteEkleBaslik {
+    font-size: 15px;
+}
+
+#sepeteEkleBaslikAlan {
+    margin-bottom: auto;
+}
+
+#sepeteEkleBaslikTopveFiyatlarAlan {
+    display: grid;
+    grid-row-gap: 25px;
+}
+
+#sepeteEkleModalButon {
+    color: white;
+    background-color: rgb(255, 123, 0);
+    border: 0;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 25px;
+    padding-right: 30px;
+}
+
+    #sepeteEkleModalButon:hover {
+        background-color: rgb(204, 98, 0);
+    }
+
+#sepeteEkleModalIcon {
+    font-size: 30px;
+}
+
+#sepeteEkleModalYazi {
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+@media (max-width: 400px) {
+
+    #sepeteEkleButon {
+        height: 50px !important;
+        padding-left: 5px !important;
+        padding-right: 0 !important;
+    }
+
+    #sepeteEkleIcon2 {
+        font-size: 20px !important;
+    }
+
+    #sepeteEkleYazi {
+        font-weight: 600 !important;
+        margin-left: 0 !important;
+        font-size: 13px !important;
+        line-height: 16px !important;
+        display: inline-block !important;
+        width: 60px !important;
+    }
+
+    #sepeteEkleIndirimliFiyat {
+        font-weight: 700 !important;
+        font-size: 23px !important;
+    }
+
+    #sepeteEkleModalButon {
+        justify-content: center;
+        width: 100% !important;
+    }
+}
+
+
+@media (min-width:490px) and (max-width: 575px) {
+
+    #sepeteEkleButon {
+        padding-left: 15px;
+        padding-right: 25px;
+    }
+
+    #sepeteEkleModalButon {
+        width: 50%;
+    }
+}
+
+
+/* UrunFiyat */
+#urunFiyatTopveFiyatlar {
+    display: flex;
+}
+
+#urunFiyatTop {
+    background-color: rgb(255, 123, 0);
+    text-align: center;
+    width: 60px;
+    display: table;
+    color: white;
+    height: 60px;
+}
+
+#urunFiyatFiyatlar {
+    margin-left: 10px;
+}
+
+#urunFiyatTopYazi {
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+#urunFiyatFiyatlar span {
+    display: block;
+    padding: 0;
+    line-height: 16px;
+    font-weight: 600;
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+#urunFiyatIndirim {
+    text-decoration: line-through;
+    color: rgb(92, 101, 106);
+}
+
+#urunFiyatIndirimliFiyat {
+    color: rgb(255, 123, 0);
+    font-weight: 700 !important;
+    font-size: 25px !important;
+}
+
+#urunFiyatAsilFiyati {
+    font-size: 25px !important;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 489px) {
+
+    #urunFiyatTopveFiyatlar {
+        align-items: center;
+    }
+
+    #urunFiyatTop {
+        background-color: rgb(255, 123, 0);
+        text-align: center;
+        width: 40px !important;
+        display: table;
+        color: white;
+        height: 40px !important;
+    }
+
+    #urunFiyatTopYazi {
+        display: table-cell;
+        vertical-align: middle;
+        font-weight: 600 !important;
+        line-height: 14px !important;
+        font-size: 13px !important;
+    }
+
+    #urunFiyatFiyatlar {
+        margin-left: 5px !important;
+    }
+
+        #urunFiyatFiyatlar span {
+            display: block;
+            padding: 0;
+            line-height: 10px !important;
+            font-weight: 600 !important;
+            font-size: 13px !important;
+            margin: 5px 0 !important;
+        }
+
+    #urunFiyatAsilFiyati {
+        font-size: 25px !important;
+        font-weight: 700 !important;
+    }
+
+    #urunFiyatIndirim {
+        text-decoration: line-through;
+        color: rgb(92, 101, 106);
+    }
+
+    #urunFiyatIndirimliFiyat {
+        color: rgb(255, 123, 0);
+        font-weight: 700 !important;
+        font-size: 25px !important;
+    }
+}
+

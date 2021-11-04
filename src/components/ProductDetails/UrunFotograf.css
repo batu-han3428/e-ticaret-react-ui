@@ -1,0 +1,92 @@
+﻿@charset "UTF-8";
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    #ucretsizKargoUrunFotografSutun {
+        width: 100%;
+    }
+}
+
+/* ücretsiz Kargo */
+#ucretsizKargo {
+    text-align: center;
+    width: 70px;
+    background-color: rgb(254, 136, 25);
+    border-radius: 4px;
+    padding: 0;
+}
+
+#ucretsizKargoYazi {
+    display: inline-block;
+    line-height: 12px;
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+}
+
+#ucretsizKargoIcon {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+#ucretsizKargoIconAlan {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#ucretsizKargoYaziAlan {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ürün Fotoğraf */
+#kartlarFoto {
+    object-fit: scale-down !important;
+    width: inherit !important;
+    height: inherit !important;
+    cursor: pointer !important;
+}
+
+#kartlarFotoAlan {
+    height: 600px !important;
+    width: 100% !important;
+}
+
+@media (max-width: 489px) {
+
+    #kartlarFotoAlan {
+        height: 400px !important;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #kartlarFotoAlan {
+        height: 210px !important;
+    }
+}
+
+#tuslar {
+    text-align: center;
+}
+
+#tuslar button {
+    border: 0;
+    background-color: #fff;
+}
+
+#kartlarFotoTus {
+    object-fit: scale-down;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+}
+
+#kartlarFotoAlanTus {
+    height: 100px;
+    width: 100px;
+}
+
