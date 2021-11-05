@@ -24,11 +24,8 @@ const urunReducer = (state = urunState, action) => {
                 }
             })
         case "LİST_PRODUCTS":     
-            console.log(action.products);
-            return [
-                ...state,
-                action.products
-            ]
+            return state.concat(action.products);
+            
             // return state.length > 0?state.map((product) => {return {...product,...action.products}}):state.push(...action.products);
            
             

@@ -20,7 +20,7 @@ export const editProduct = (id, updates)=>({
     updates
 })
 
-export const listProducts = (products) => ({
+export const listProducts = ({products}) => ({
     type: "LİST_PRODUCTS",
     products:products
 })
