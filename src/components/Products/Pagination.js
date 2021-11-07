@@ -9,19 +9,22 @@ const Pagination = (props) => {
 
     var toplamSayfa;
 
-    useEffect(() => {
+    useEffect(() => {   
         
-        if(props.urunSayisi < 40){
-            toplamSayfa = Math.ceil(props.urunSayisi / 20);
-        }else{
-            toplamSayfa = Math.floor(props.urunSayisi / 20);
-        }
-        
+        toplamSayfa = Math.ceil(props.urunSayisi / 20);
 
         let li = document.querySelectorAll('.page-item a');
 
+        if(props.aktifSayfa > 1){
+            document.getElementById('previous').classList.remove('disabled');
+        }
+
+        if(props.aktifSayfa < toplamSayfa){
+            document.getElementById('next').classList.remove('disabled');
+        }
+
         if(toplamSayfa > 5){
-            if(props.aktifSayfa > 3){
+            if(props.aktifSayfa > 3 ){
                 let baslangic = Math.abs(2-props.aktifSayfa);
                 li.forEach(li=>{
                     if(li.classList.contains('sayi')){
@@ -50,33 +53,45 @@ const Pagination = (props) => {
         }
 
         li.forEach(li=>{
-            if(li.textContent > toplamSayfa){
+            if(li.textContent > toplamSayfa){               
                 li.style.cursor="no-drop";
             }
         })
 
     }, [])
 
-    const sayfaCagir = (e) => {
-        
+    const sayfaCagir = (e) => {       
        
         if(toplamSayfa < Number(e.target.textContent)){
 
-        }else{
+        }else{      
+            window.scroll(0,200);     
             props.dispatch(startloading())  
-            axios.get(`https://localhost:5001/api/Urunler/UrunGetir/${props.pathname}?PageNumber=${e.target.textContent}`,).then(res => {
+            
+            let gidilecekSayfa;
+
+            if(e.target.parentNode.classList.contains('previous')){
+                gidilecekSayfa = Number(props.aktifSayfa) - 1;
+            }else if(e.target.parentNode.classList.contains('next')){
+                gidilecekSayfa = Number(props.aktifSayfa) + 1;
+            }else{
+                gidilecekSayfa = Number(e.target.textContent);
+            }
+            
+            axios.get(`https://localhost:5001/api/Urunler/UrunGetir/${props.pathname}?PageNumber=${gidilecekSayfa}`,).then(res => {
                 props.dispatch(listProducts({
                     products: res.data.urunler,
                     totalProduct : res.data.toplamUrunSayisi
                 }))         
                 
                 props.dispatch(activepage({
-                    active:Number(e.target.textContent)
+                    active:gidilecekSayfa
                 }))
     
             }).finally(() => {
                 props.dispatch(endloading())  
             });
+
 
             props.dispatch(resetstate())
             props.dispatch(startloading())
@@ -88,8 +103,8 @@ const Pagination = (props) => {
         <div className="row mt-3 border-3 border-bottom" id="paginationSatir">
             <div className="col-md-12 p-3">
                 <ul className="pagination justify-content-center">
-                    <li className="page-item disabled">
-                        <a className="page-link" href="/#">
+                    <li className="page-item disabled previous" id="previous">
+                        <a className="page-link previous" href="/#" onClick={(e)=>{e.preventDefault(); sayfaCagir(e)}}>
                             <span>&laquo;</span>
                         </a>
                     </li>
@@ -97,10 +112,10 @@ const Pagination = (props) => {
                     </li>
                     <li className="page-item"><a className="page-link sayi" href="/#" onClick={(e)=>{e.preventDefault(); sayfaCagir(e)}}>2</a></li>
                     <li className="page-item"><a className="page-link sayi" href="/#" onClick={(e)=>{e.preventDefault(); sayfaCagir(e)}}>3</a></li>
-                    <li className="page-item"><a className="page-link sayi" id="4" href="/#" onClick={(e)=>{e.preventDefault(); sayfaCagir(e)}}>4</a></li>
+                    <li className="page-item"><a className="page-link sayi" href="/#" onClick={(e)=>{e.preventDefault(); sayfaCagir(e)}}>4</a></li>
                     <li className="page-item"><a className="page-link sayi" href="/#" onClick={(e)=>{e.preventDefault(); sayfaCagir(e)}}>5</a></li>
-                    <li className="page-item">
-                        <a className="page-link" href="/#">
+                    <li className="page-item disabled next" id="next">
+                        <a className="page-link next" href="/#" onClick={(e)=>{e.preventDefault(); sayfaCagir(e)}}>
                             <span>&raquo;</span>
                         </a>
                     </li>
