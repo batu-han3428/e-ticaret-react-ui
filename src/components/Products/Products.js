@@ -46,7 +46,7 @@ const Products = (props) => {
                 <div className="row">
                     <ProductKategoriler />
                     <div className="col-md-9" id="filtreIcerik">
-                        <Filtre />
+                        <Filtre pathname={props.location.pathname.substring(1).toLowerCase()}/>
                         <Marka />
                         <Urunler pathname={props.location.pathname.substring(1).toLowerCase()} />                                 
                     </div>

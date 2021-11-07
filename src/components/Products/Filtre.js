@@ -1,11 +1,13 @@
-import * as React from 'react';
+import React from 'react';
+import {connect} from 'react-redux';
 
-const Filtre = () => {
+const Filtre = (props) => {
+    console.log(props);
     return (
         <div className="row">
             <div className="col-md-12 p-4" id="icerikEnUst">
                 <div className="me-auto">
-                    <span><b>Telefon</b> için 2308 ürün bulundu</span>
+                    <span><b>{props.pathname[0].toUpperCase() + props.pathname.substring(1)}</b> için {props.toplamUrunSayisi} ürün bulundu</span>
                 </div>
                 <div id="filtreBuyukEkran">
                     <select defaultValue={'0'} className="form-select form-select-sm p-2">
@@ -23,4 +25,10 @@ const Filtre = () => {
         )
 }
 
-export default Filtre
+const mapStateToProps = (state) =>{  
+    return {
+        toplamUrunSayisi:state.urunBilgileri.toplamUrunSayisi    
+    }
+}
+
+export default connect(mapStateToProps)(Filtre);
