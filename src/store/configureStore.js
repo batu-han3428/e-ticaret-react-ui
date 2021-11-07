@@ -1,13 +1,14 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {createStore, combineReducers} from 'redux'
 import urunReducer from '../reducers/urunler'
-import kategoriReducer from '../reducers/kategoriler'
-
+import loaderReducer from '../reducers/loader';
+import paginationReducer from '../reducers/pagination';
 
 export default () => {
     const store = createStore(combineReducers({
-        urunler:urunReducer,
-        kategori:kategoriReducer
+        urunBilgileri:urunReducer,
+        loader:loaderReducer,
+        pagination:paginationReducer
     }),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
     return store;

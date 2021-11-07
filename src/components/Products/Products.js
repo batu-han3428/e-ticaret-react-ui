@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useEffect} from 'react';
 import SiteHaritasi from './SiteHaritasi';
 import Filtreleme from './Filtreleme';
 import ProductKategoriler from './ProductKategoriler';
@@ -9,17 +9,35 @@ import Pagination from './Pagination';
 import './Products.css';
 import {connect} from 'react-redux'
 import axios from 'axios'
-import {listProducts} from '../../action/urunler';
+import {listProducts, resetstate} from '../../action/urunler';
+import { startloading, endloading } from '../../action/loading';
+import Loader from './Loader';
+
 
 const Products = (props) => {
-    React.useEffect(() => {
+
+    useEffect(() => {
+
+        props.dispatch(startloading())  
         axios.get(`https://localhost:5001/api/Urunler/UrunGetir/${props.location.pathname.substring(1).toLowerCase()}`,).then(res => {
             props.dispatch(listProducts({
-                products: res.data
-            }))          
+                products: res.data.urunler,
+                totalProduct : res.data.toplamUrunSayisi
+            }))         
+           
+        }).finally(() => {
+            props.dispatch(endloading())  
         });
-    }, [props])
+        
+
+        return () => {
+            props.dispatch(resetstate())
+            props.dispatch(startloading())
+        }
+
+    }, [])
     
+
     return (
         <div className="container-fluid" style={{ backgroundColor: "rgb(243, 243, 243)", paddingBottom: "25px" }}>
             <SiteHaritasi />
@@ -30,8 +48,7 @@ const Products = (props) => {
                     <div className="col-md-9" id="filtreIcerik">
                         <Filtre />
                         <Marka />
-                        <Urunler />
-                        <Pagination />
+                        <Urunler pathname={props.location.pathname.substring(1).toLowerCase()} />                                 
                     </div>
                 </div>
             </div>
@@ -39,4 +56,10 @@ const Products = (props) => {
         )
 }
 
-export default connect()(Products)
+const mapStateToProps = (state) =>{  
+    return {
+        loading:state.loader    
+    }
+}
+
+export default connect(mapStateToProps)(Products)
