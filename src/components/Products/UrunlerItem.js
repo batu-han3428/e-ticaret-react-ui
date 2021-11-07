@@ -1,13 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const UrunlerItem = (product) => {
+ 
     return (
         <div className="col">
             <div className="card urunKartlari">
                 <div className="kartlarFotoAlan">
-                    <a href="Telefon_Icerik/XiomiRedmi.html">
+                    <Link to={`/Telefon/${product.id}`}>                   
                         <img className="card-img-top kartlarFoto" src={require(`${product.fotograf}`).default} alt="xiomiNote8"/>
-                    </a>
+                    </Link>
                 </div>
                 <div className="card-body kartlarBody">
                     <div className="kartlarMarkaAlan">

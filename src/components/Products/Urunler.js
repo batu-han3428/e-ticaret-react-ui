@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import Loader from './Loader';
+import Loader from '../Loader/Loader';
 import UrunlerItem from './UrunlerItem';
 import Pagination from './Pagination';
 
 const Urunler = (props) => {
+
     return (   
          <>
             {props.loading === true?

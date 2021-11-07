@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 const Filtre = (props) => {
-    console.log(props);
     return (
         <div className="row">
             <div className="col-md-12 p-4" id="icerikEnUst">
