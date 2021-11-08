@@ -6,12 +6,12 @@ import TeknikOzellikler from './TeknikOzellikler';
 import UrunIcerik from './UrunIcerik';
 import {connect} from 'react-redux';
 import { listProduct, resetstate } from '../../action/urunDetay';
-import Loader from '../Loader/Loader';
+
 
 const ProductDetails = (props) => {
 
     useEffect(async () => {
-        
+
         props.dispatch(startloading()) 
         async function axiosApi(){
             try {
@@ -40,15 +40,9 @@ const ProductDetails = (props) => {
         
                 
             <div className="container-fluid" style={{ backgroundColor: 'rgb(243, 243, 243)', paddingBottom: '25px' }}>
-                {props.loading===true?
-            
-                <Loader/>:
-                    <>
                         <SiteHaritasi />
                         <UrunIcerik />
-                        <TeknikOzellikler />
-                   </>
-                }
+                        <TeknikOzellikler />                
             </div>
            
         
@@ -56,10 +50,4 @@ const ProductDetails = (props) => {
         )
 }
 
-const mapStateToProps = (state) =>{  
-    return {
-        loading:state.loader    
-    }
-}
-
-export default connect(mapStateToProps)(ProductDetails);
+export default connect()(ProductDetails);

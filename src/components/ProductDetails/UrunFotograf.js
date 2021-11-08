@@ -3,6 +3,7 @@ import './UrunFotograf.css';
 import * as Icon from 'react-bootstrap-icons';
 import './UrunFotografJs.js';
 import {connect} from 'react-redux'
+import Loader from '../Loader/Loader';
 
 const UrunFotograf = (props) => {
 
@@ -22,61 +23,65 @@ const UrunFotograf = (props) => {
                 </div>
             </div>
             {/*Ücretsiz Kargo */}
-
-            {/*Ürün Fotoğraf*/}
-            <div id="KontrolTusuTetikle1" className="carousel slide slider1">
-                <div className="carousel-inner">
-                   
-                  {
-                      props.urunDetay.ad
-                  }
-                    <div className="carousel-item active">
-                        <div id="kartlarFotoAlan" data-bs-target="#xiomiredmi4foto" data-bs-toggle="modal">
-                            <img id="kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8"/>
+            {props.loading===true?
+                <>
+                <Loader/>
+                </>: 
+                
+                <>
+                {props.urunDetay.ad}
+                {/*Ürün Fotoğraf*/}
+                <div id="KontrolTusuTetikle1" className="carousel slide slider1">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <div id="kartlarFotoAlan" data-bs-target="#xiomiredmi4foto" data-bs-toggle="modal">
+                                <img id="kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8"/>
+                            </div>
+                            <div className="modal fade" id="xiomiredmi4foto">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <button style={{ marginLeft: "auto" }} className="btn-close" data-bs-dismiss="modal"></button>
+                                        <div className="modal-body">
+                                            <img className="card-img-top kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Modal"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="modal fade" id="xiomiredmi4foto">
-                            <div className="modal-dialog modal-dialog-centered">
-                                <div className="modal-content">
-                                    <button style={{ marginLeft: "auto" }} className="btn-close" data-bs-dismiss="modal"></button>
-                                    <div className="modal-body">
-                                        <img className="card-img-top kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Modal"/>
+                        <div className="carousel-item">
+                            <div id="kartlarFotoAlan" data-bs-target="#xiomiredmi4foto" data-bs-toggle="modal">
+                                <img id="kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8"/>
+                            </div>
+                            <div className="modal fade" id="xiomiredmi4foto">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <button style={{ marginLeft: "auto" }} className="btn-close" data-bs-dismiss="modal"></button>
+                                        <div className="modal-body">
+                                            <img className="card-img-top kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Modal"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="carousel-item">
-                        <div id="kartlarFotoAlan" data-bs-target="#xiomiredmi4foto" data-bs-toggle="modal">
-                            <img id="kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8"/>
-                        </div>
-                        <div className="modal fade" id="xiomiredmi4foto">
-                            <div className="modal-dialog modal-dialog-centered">
-                                <div className="modal-content">
-                                    <button style={{ marginLeft: "auto" }} className="btn-close" data-bs-dismiss="modal"></button>
-                                    <div className="modal-body">
-                                        <img className="card-img-top kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Modal"/>
-                                    </div>
+                    <div className="col-md-12" id="tuslar">
+                        <div>
+                            <button className="tusButonlari" data-bs-target="#KontrolTusuTetikle1" data-bs-slide-to="0">
+                                <div id="kartlarFotoAlanTus">
+                                    <img id="kartlarFotoTus" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Tus"/>
                                 </div>
-                            </div>
+                            </button>
+                            <button className="tusButonlari" data-bs-target="#KontrolTusuTetikle1" data-bs-slide-to="1">
+                                <div id="kartlarFotoAlanTus">
+                                    <img id="kartlarFotoTus" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Tus"/>
+                                </div>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div className="col-md-12" id="tuslar">
-                    <div>
-                        <button className="tusButonlari" data-bs-target="#KontrolTusuTetikle1" data-bs-slide-to="0">
-                            <div id="kartlarFotoAlanTus">
-                                <img id="kartlarFotoTus" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Tus"/>
-                            </div>
-                        </button>
-                        <button className="tusButonlari" data-bs-target="#KontrolTusuTetikle1" data-bs-slide-to="1">
-                            <div id="kartlarFotoAlanTus">
-                                <img id="kartlarFotoTus" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Tus"/>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            {/*Ürün Fotoğraf*/}
+                {/*Ürün Fotoğraf*/}
+                </>
+            } 
         </div>
         )
 }
@@ -84,7 +89,8 @@ const UrunFotograf = (props) => {
 const mapStateToProps = (state) =>{  
     console.log(state);
     return {
-        urunDetay:state.urunDetaylari 
+        urunDetay:state.urunDetaylari,
+        loading:state.loader    
     }
 }
 

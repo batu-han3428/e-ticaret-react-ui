@@ -23,7 +23,7 @@ const Urunler = (props) => {
 
 const mapStateToProps = (state) =>{  
     return {
-        products:state.urunBilgileri.urunler,
+        products:state.urunBilgileri.urunler || [] ,
         loading:state.loader    
     }
 }

@@ -14,7 +14,7 @@ import { startloading, endloading } from '../../action/loading';
 
 const Products = (props) => {
 
-    useEffect(async  () => {
+    useEffect(async () => {
 
         props.dispatch(startloading())
         async function axiosApi(){
