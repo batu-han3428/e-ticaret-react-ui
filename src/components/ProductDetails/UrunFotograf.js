@@ -7,7 +7,7 @@ import Loader from '../Loader/Loader';
 
 const UrunFotograf = (props) => {
 
-    
+    console.log(props);    
     return (
         <div className="col-md-6 border-end" id="ucretsizKargoUrunFotografSutun">
 
@@ -87,7 +87,6 @@ const UrunFotograf = (props) => {
 }
 
 const mapStateToProps = (state) =>{  
-    console.log(state);
     return {
         urunDetay:state.urunDetaylari,
         loading:state.loader    
