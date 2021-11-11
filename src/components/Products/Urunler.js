@@ -5,7 +5,7 @@ import UrunlerItem from './UrunlerItem';
 import Pagination from './Pagination';
 
 const Urunler = (props) => {
-
+  
     return (   
          <>
             {props.loading === true?

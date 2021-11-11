@@ -1,13 +1,14 @@
 import React from 'react';
 import './UrunFotograf.css';
 import * as Icon from 'react-bootstrap-icons';
-import './UrunFotografJs.js';
 import {connect} from 'react-redux'
 import Loader from '../Loader/Loader';
+import UrunFotografItem from './UrunFotografItem';
+import UrunFotografButtons from './UrunFotografButtons';
+
 
 const UrunFotograf = (props) => {
 
-    console.log(props);    
     return (
         <div className="col-md-6 border-end" id="ucretsizKargoUrunFotografSutun">
 
@@ -33,50 +34,16 @@ const UrunFotograf = (props) => {
                 {/*Ürün Fotoğraf*/}
                 <div id="KontrolTusuTetikle1" className="carousel slide slider1">
                     <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <div id="kartlarFotoAlan" data-bs-target="#xiomiredmi4foto" data-bs-toggle="modal">
-                                <img id="kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8"/>
-                            </div>
-                            <div className="modal fade" id="xiomiredmi4foto">
-                                <div className="modal-dialog modal-dialog-centered">
-                                    <div className="modal-content">
-                                        <button style={{ marginLeft: "auto" }} className="btn-close" data-bs-dismiss="modal"></button>
-                                        <div className="modal-body">
-                                            <img className="card-img-top kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Modal"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <div id="kartlarFotoAlan" data-bs-target="#xiomiredmi4foto" data-bs-toggle="modal">
-                                <img id="kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8"/>
-                            </div>
-                            <div className="modal fade" id="xiomiredmi4foto">
-                                <div className="modal-dialog modal-dialog-centered">
-                                    <div className="modal-content">
-                                        <button style={{ marginLeft: "auto" }} className="btn-close" data-bs-dismiss="modal"></button>
-                                        <div className="modal-body">
-                                            <img className="card-img-top kartlarFoto" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Modal"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {props.urunDetay.detayFotograflar.$values.map((photo, index)=>{
+                            return <UrunFotografItem key={photo.id} {...photo} index={index} />}) 
+                        }                         
                     </div>
                     <div className="col-md-12" id="tuslar">
                         <div>
-                            <button className="tusButonlari" data-bs-target="#KontrolTusuTetikle1" data-bs-slide-to="0">
-                                <div id="kartlarFotoAlanTus">
-                                    <img id="kartlarFotoTus" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Tus"/>
-                                </div>
-                            </button>
-                            <button className="tusButonlari" data-bs-target="#KontrolTusuTetikle1" data-bs-slide-to="1">
-                                <div id="kartlarFotoAlanTus">
-                                    <img id="kartlarFotoTus" src={require('./UrunFotografImg/34867488.png').default} alt="xiomiNote8Tus"/>
-                                </div>
-                            </button>
-                        </div>
+                        {props.urunDetay.detayFotograflar.$values.map((photo, index)=>{
+                            return <UrunFotografButtons key={photo.id} {...photo} index={index} />}) 
+                        }        
+                        </div>                  
                     </div>
                 </div>
                 {/*Ürün Fotoğraf*/}
