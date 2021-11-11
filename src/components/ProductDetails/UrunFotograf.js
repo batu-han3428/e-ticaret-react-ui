@@ -30,18 +30,17 @@ const UrunFotograf = (props) => {
                 </>: 
                 
                 <>
-                {props.urunDetay.ad}
                 {/*Ürün Fotoğraf*/}
                 <div id="KontrolTusuTetikle1" className="carousel slide slider1">
                     <div className="carousel-inner">
-                        {props.urunDetay.detayFotograflar.$values.map((photo, index)=>{
-                            return <UrunFotografItem key={photo.id} {...photo} index={index} />}) 
+                        {Object.keys(props.urunDetay).length > 0?props.urunDetay.detayFotograflar.$values.map((photo, index)=>{
+                            return <UrunFotografItem key={photo.id} {...photo} index={index} />}):"" 
                         }                         
                     </div>
                     <div className="col-md-12" id="tuslar">
                         <div>
-                        {props.urunDetay.detayFotograflar.$values.map((photo, index)=>{
-                            return <UrunFotografButtons key={photo.id} {...photo} index={index} />}) 
+                        {Object.keys(props.urunDetay).length > 0?props.urunDetay.detayFotograflar.$values.map((photo, index)=>{
+                            return <UrunFotografButtons key={photo.id} {...photo} index={index} />}):"" 
                         }        
                         </div>                  
                     </div>

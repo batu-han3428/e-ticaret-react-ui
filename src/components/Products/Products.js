@@ -20,9 +20,9 @@ const Products = (props) => {
         async function axiosApi(){
             try {
                 const res = await axios.get(`https://localhost:5001/api/Urunler/UrunGetir/${props.location.pathname.substring(1).toLowerCase()}`);
-
+                
                 props.dispatch(listProducts({
-                    products: await res.data.urunler.$values,
+                    products: await res.data.urunler,
                     totalProduct : await res.data.toplamUrunSayisi
                 }))   
             }catch(error) {

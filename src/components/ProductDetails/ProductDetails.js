@@ -17,6 +17,7 @@ const ProductDetails = (props) => {
             try {
                 const res = await axios.get(`https://localhost:5001/api/Urunler/UrunDetayGetir/${Number(props.match.params.id)}`);
   
+      
                 props.dispatch(listProduct(
                     await res.data
                 ))  

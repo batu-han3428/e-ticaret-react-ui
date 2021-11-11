@@ -32,7 +32,6 @@ const UrunFotografButtons = (props) => {
         });
     }
 
-    console.log(props);
     return (
     <>
         <button className="tusButonlari" data-bs-target="#KontrolTusuTetikle1" data-bs-slide-to={props.index}>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const UrunlerItem = (product) => {
- 
+    
     return (
         <div className="col">
             <div className="card urunKartlari">
