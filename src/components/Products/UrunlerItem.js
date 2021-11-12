@@ -13,7 +13,7 @@ const UrunlerItem = (product) => {
                 </div>
                 <div className="card-body kartlarBody">
                     <div className="kartlarMarkaAlan">
-                        <img className="kartlarMarka" src={require(`${product.markaFotograf}`).default} alt="xiomilogo" />
+                        <img className="kartlarMarka" src={require(`.${product.markaFotograf}`).default} alt="xiomilogo" />
                     </div>
                     <div className="kartlarUrunAdAlan">
                         <span className="kartlarUrunAd"><a href="/#">{product.ad}</a></span>

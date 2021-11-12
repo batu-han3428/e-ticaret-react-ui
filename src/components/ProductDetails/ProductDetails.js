@@ -21,6 +21,9 @@ const ProductDetails = (props) => {
                 props.dispatch(listProduct(
                     await res.data
                 ))  
+
+                window.scroll(0,200); 
+                
             }catch(error) {
                 console.warn(`Burada bir hata var: ${error}`)
             }finally {
@@ -41,9 +44,9 @@ const ProductDetails = (props) => {
         
                 
             <div className="container-fluid" style={{ backgroundColor: 'rgb(243, 243, 243)', paddingBottom: '25px' }}>
-                        <SiteHaritasi />
-                        <UrunIcerik />
-                        <TeknikOzellikler />                
+                <SiteHaritasi />
+                <UrunIcerik />
+                <TeknikOzellikler />                
             </div>
            
         
