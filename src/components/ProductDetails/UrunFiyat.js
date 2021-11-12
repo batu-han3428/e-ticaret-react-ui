@@ -23,7 +23,7 @@ const UrunFiyat = (props) =>{
 }
 
 const mapStateToProps = (state) =>{     
-    console.log(state); 
+     
     return {
         urunFiyatlari:state.urunDetaylari || ""
     }
