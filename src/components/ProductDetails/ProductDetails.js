@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { endloading, startloading } from '../../action/loading';
-import SiteHaritasi from './SiteHaritasi';
+import SiteHaritasi from '../SiteMap/SiteHaritasi';
 import TeknikOzellikler from './TeknikOzellikler';
 import UrunIcerik from './UrunIcerik';
 import {connect} from 'react-redux';
@@ -9,7 +9,7 @@ import { listProduct, resetstate } from '../../action/urunDetay';
 
 
 const ProductDetails = (props) => {
-    console.log(props);
+    
     useEffect(async () => {
 
         props.dispatch(startloading()) 
@@ -42,7 +42,7 @@ const ProductDetails = (props) => {
 
     return ( 
         <div className="container-fluid" style={{ backgroundColor: 'rgb(243, 243, 243)', paddingBottom: '25px' }}>
-            <SiteHaritasi />
+            <SiteHaritasi pathname={props.location.pathname}/>
             <UrunIcerik />
             <TeknikOzellikler />                
         </div>

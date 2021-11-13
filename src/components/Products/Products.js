@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import SiteHaritasi from './SiteHaritasi';
+import SiteHaritasi from '../SiteMap/SiteHaritasi';
 import Filtreleme from './Filtreleme';
 import ProductKategoriler from './ProductKategoriler';
 import Filtre from './Filtre';
@@ -44,7 +44,7 @@ const Products = (props) => {
 
     return (              
         <div className="container-fluid" style={{ backgroundColor: "rgb(243, 243, 243)", paddingBottom: "25px" }}>
-            <SiteHaritasi />
+            <SiteHaritasi pathname={props.location.pathname} />
             <Filtreleme />
             <div className="container">
                 <div className="row">

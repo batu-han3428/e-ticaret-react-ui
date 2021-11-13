@@ -1,22 +1,14 @@
 import * as React from 'react';
+import SiteHaritasi from '../SiteMap/SiteHaritasi';
 import './About.css';
 
-const About = () => {
+const About = (props) => {
     return (
         <div className="container-fluid" id="body">
             <div className="icerikAbout">
 
                 {/*Site Haritası */}
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12" id="siteHaritasiSutun">
-                            <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><a id="siteHaritasiLink" href="/">Ana Sayfa</a></li>
-                                <li className="breadcrumb-item active">Hakkımızda</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+                <SiteHaritasi pathname={props.location.pathname} />
                 {/*/Site Haritası */}
 
                 {/*Hakkımızda Fotoğraf, Hakkımızda İçerik */}
