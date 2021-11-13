@@ -9,7 +9,7 @@ import { listProduct, resetstate } from '../../action/urunDetay';
 
 
 const ProductDetails = (props) => {
-
+    console.log(props);
     useEffect(async () => {
 
         props.dispatch(startloading()) 
@@ -41,17 +41,12 @@ const ProductDetails = (props) => {
     }, []);
 
     return ( 
-        
-                
-            <div className="container-fluid" style={{ backgroundColor: 'rgb(243, 243, 243)', paddingBottom: '25px' }}>
-                <SiteHaritasi />
-                <UrunIcerik />
-                <TeknikOzellikler />                
-            </div>
-           
-        
-        
-        )
+        <div className="container-fluid" style={{ backgroundColor: 'rgb(243, 243, 243)', paddingBottom: '25px' }}>
+            <SiteHaritasi />
+            <UrunIcerik />
+            <TeknikOzellikler />                
+        </div>
+    )
 }
 
 export default connect()(ProductDetails);
