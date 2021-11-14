@@ -4,13 +4,15 @@ import urunReducer from '../reducers/urunler'
 import loaderReducer from '../reducers/loader';
 import paginationReducer from '../reducers/pagination';
 import urunDetayReducer from '../reducers/urunDetay';
+import orderByReducer from '../reducers/orderBy';
 
 export default () => {
     const store = createStore(combineReducers({
         urunBilgileri:urunReducer,
         loader:loaderReducer,
         pagination:paginationReducer,
-        urunDetaylari:urunDetayReducer
+        urunDetaylari:urunDetayReducer,
+        siralamaBilgisi:orderByReducer
     }),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
     return store;

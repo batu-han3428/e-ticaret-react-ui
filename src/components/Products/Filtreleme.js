@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import * as Icon from 'react-bootstrap-icons';
+import FiltrelemeSiralaMobil from './FiltrelemeSiralaMobil';
 
-const Filtreleme = () => {
-    return (
-        
+const Filtreleme = (props) => {
+    return (      
         <div className="container mb-4" id="filtre">
             <div className="row">
                 <div className="col-6">
@@ -260,47 +260,11 @@ const Filtreleme = () => {
                     </div>
                 </div>
                 <div className="col-6">
-                    <div className="filtreDiv">
-                        <button className="filtreButon" data-bs-target="#modalPopuler" data-bs-toggle="modal">
-                            <span className="filtreYazi">Listeleme Seçenekleri</span>
-                            <Icon.CardList className="filtreIcon" />
-                        </button>
-                        <div className="modal fade" id="modalPopuler">                          
-                            <div className="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-                                <div className="modal-content">
-                                    <div className="modal-header d-flex">
-                                        <h4 className="modal-title ms-auto">Listeleme&nbsp;Seçenekleri</h4>
-                                        <button className="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-                                    <div className="modal-body" id="listelemeModalBody">
-                                        <button className="listelemeButon" type="button">
-                                            <Icon.StarFill className="listelemeIcon" /><span>En Popüler</span>
-                                        </button>
-                                        <button className="listelemeButon" type="button">
-                                            <Icon.SortAlphaDown className="listelemeIcon" /><span>İsme Göre (A-Z)</span>
-                                        </button>
-                                        <button className="listelemeButon" type="button">
-                                            <Icon.SortAlphaUp className="listelemeIcon" /><span>İsme Göre (Z-A)</span>
-                                        </button>
-                                        <button className="listelemeButon" type="button">
-                                            <Icon.SortNumericUpAlt className="listelemeIcon" /><span>Fiyata Göre (Artan)</span>
-                                        </button>
-                                        <button className="listelemeButon" type="button">
-                                            <Icon.SortNumericDownAlt className="listelemeIcon" /><span>Fiyata Göre (Azalan)</span>
-                                        </button>
-                                        <button className="listelemeButon" type="button">
-                                            <Icon.PiggyBankFill className="listelemeIcon" /><span>İndirimli Ürünler</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <FiltrelemeSiralaMobil pathname={props.pathname} />                   
                 </div>
             </div>
-        </div>
-        
-        )
+        </div>      
+    )
 }
 
 export default Filtreleme

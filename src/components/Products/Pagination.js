@@ -78,7 +78,7 @@ const Pagination = (props) => {
                 gidilecekSayfa = Number(e.target.textContent);
             }
             
-            axios.get(`https://localhost:5001/api/Urunler/UrunGetir/${props.pathname}?PageNumber=${gidilecekSayfa}`,).then(res => {
+            axios.get(`https://localhost:5001/api/Urunler/UrunGetir/${props.pathname}?PageNumber=${gidilecekSayfa}&Siralama=${props.siralama}`,).then(res => {
                 props.dispatch(listProducts({
                     products: res.data.urunler,
                     totalProduct : res.data.toplamUrunSayisi
@@ -125,10 +125,11 @@ const Pagination = (props) => {
         )
 }
 
-const mapStateToProps = (state) =>{  
+const mapStateToProps = (state) =>{     
     return {
         urunSayisi:state.urunBilgileri.toplamUrunSayisi,
-        aktifSayfa:state.pagination.active  
+        aktifSayfa:state.pagination.active,
+        siralama:state.siralamaBilgisi.orderby  
     }
 }
 
