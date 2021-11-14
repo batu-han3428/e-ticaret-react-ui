@@ -57,7 +57,7 @@ const Products = (props) => {
             <Filtreleme pathname={props.location.pathname.substring(1).toLowerCase()} />
             <div className="container">
                 <div className="row">
-                    <ProductKategoriler />
+                    <ProductKategoriler pathname={props.location.pathname.substring(1).toLowerCase()} />
                     <div className="col-md-9" id="filtreIcerik">
                         <Filtre pathname={props.location.pathname.substring(1).toLowerCase()}/>
                         <Marka />

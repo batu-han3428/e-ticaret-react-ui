@@ -9,7 +9,6 @@ import {connect} from 'react-redux';
 
 const FiltrelemeSiralaMobil = (props) => {
 
-    console.log(props);
     const siralaMobil = (siralamaAd) =>{
         
         window.scroll(0,200);     

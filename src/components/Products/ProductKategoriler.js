@@ -1,7 +1,17 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 import * as Icon from 'react-bootstrap-icons';
 
-const ProductKategoriler = () => {
+const ProductKategoriler = (props) => {
+
+    useEffect(() => {
+        axios.get(`https://localhost:5001/api/Urunler/AltKategorileriGetir/${props.pathname}`).then(res => {
+           console.log(res);
+        }).finally(() => {            
+           
+        });
+    }, [])
+
     return (
         <div className="col-md-3" id="kategoriMenusu">
             <div className="accordion" style={{ backgroundColor: "white" }}>
