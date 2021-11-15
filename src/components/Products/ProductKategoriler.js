@@ -1,14 +1,16 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import * as Icon from 'react-bootstrap-icons';
+import {listSubCategories} from '../../action/subCategories'
+import {connect} from 'react-redux'
 
 const ProductKategoriler = (props) => {
 
     useEffect(() => {
-        axios.get(`https://localhost:5001/api/Urunler/AltKategorileriGetir/${props.pathname}`).then(res => {
-           console.log(res);
-        }).finally(() => {            
-           
+        axios.get(`https://localhost:5001/api/Urunler/AltKategorileriGetir/${props.pathname}`).then(res => {        
+            props.dispatch(listSubCategories({
+                subcategories: res.data.kategorilerAltKategoriler.$values 
+            }))  
         });
     }, [])
 
@@ -255,4 +257,4 @@ const ProductKategoriler = (props) => {
         )
 }
 
-export default ProductKategoriler
+export default connect()(ProductKategoriler)
