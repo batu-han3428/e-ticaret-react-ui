@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import * as Icon from 'react-bootstrap-icons';
-import {listSubCategories} from '../../action/subCategories'
+import {listSubCategories, resetState} from '../../action/subCategories'
 import {connect} from 'react-redux'
+import ProductKategorilerSubCategoriesItem from './ProductKategorilerSubCategoriesItem'
 
 const ProductKategoriler = (props) => {
 
@@ -12,6 +13,10 @@ const ProductKategoriler = (props) => {
                 subcategories: res.data.kategorilerAltKategoriler.$values 
             }))  
         });
+
+        return () => { 
+            props.dispatch(resetState())   
+        }
     }, [])
 
     return (
@@ -26,9 +31,13 @@ const ProductKategoriler = (props) => {
                             <Icon.TagsFill className="categoriesIcon" /><span>KATEGORİLER</span>
                         </button>
                     </h2>
-                    <div id="kategoriler" className="accordion-collapse collapse">
+                    <div id="kategoriler" className="accordion-collapse collapse">                      
                         <div className="accordion-body">
-                            <a href="/#">Cep Telefonu Aksesuarları&nbsp;<span>(1.399)</span></a>
+                            {props.altKategoriler.map((subcategori, index)=>{
+                                return <ProductKategorilerSubCategoriesItem key={index} {...subcategori} />
+                            })}
+                            
+                            {/* <a href="/#">Cep Telefonu Aksesuarları&nbsp;<span>(1.399)</span></a>
                             <a href="/#">Kılıf ve Koruyucular&nbsp;<span>(845)</span></a>
                             <a href="/#">Kulaklıklar&nbsp;<span>(533)</span></a>
                             <a href="/#">Kılıf ve Koruyucular&nbsp;<span>(845)</span></a>
@@ -67,7 +76,7 @@ const ProductKategoriler = (props) => {
                             <a href="/#">Bilgisayar Aksesuarları&nbsp;<span>(2)</span></a>
                             <a href="/#">Kulaklıklar&nbsp;<span>(1)</span></a>
                             <a href="/#">Bluetooth Kulaklıklar&nbsp;<span>(1)</span></a>
-                            <a href="/#">Oppo Reno 5 Lite&nbsp;<span>(1)</span></a>
+                            <a href="/#">Oppo Reno 5 Lite&nbsp;<span>(1)</span></a> */}
                         </div>
                     </div>
                 </div>
@@ -257,4 +266,10 @@ const ProductKategoriler = (props) => {
         )
 }
 
-export default connect()(ProductKategoriler)
+const mapStateToProps = (state) =>{ 
+    return {
+        altKategoriler:state.subCategories || [] 
+    }
+}
+
+export default connect(mapStateToProps)(ProductKategoriler)

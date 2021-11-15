@@ -1,10 +1,8 @@
 import React from 'react'
 
-const ProductKategorilerSubCategoriesItem = () => {
+const ProductKategorilerSubCategoriesItem = (props) => {
     return (
-        <div>
-            
-        </div>
+        <a href="/#" onClick={(e)=>e.preventDefault()}>{props.altKategoriler.altKategoriAdi}&nbsp;<span>(1.399)</span></a>
     )
 }
 

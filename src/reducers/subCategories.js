@@ -8,6 +8,8 @@ const subCategoriesReducer = (state = subCategoriesState, action) => {
                 ...state,
                 ...action.subcategories.subcategories
             ]
+        case "RESET_STATE":
+            return state = []
         default:
             return state;
     }
